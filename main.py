@@ -135,14 +135,14 @@ block = cross_data["data_block"]
 rand_set = cross_data["rand_set"]
 reminder_set = cross_data["rem_set"]
 
-population = initPopulation(n=population_n)
-first_init = population
+initial_population = initPopulation(n=population_n)
+
 cross_validation_plot = []
 for c in range(10):
     res = select_validate(block, rand_set, c, reminder_set)
     train = res["train"]
     cross_valid = res["cross_valid"]
-    population = first_init
+    population = initial_population
 
     for t in range(t_max):
         ranked_based = []
