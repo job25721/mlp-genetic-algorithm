@@ -141,7 +141,7 @@ cross_validation_plot = []
 for c in range(10):
     res = select_validate(block, rand_set, c, reminder_set)
     train = res["train"]
-    cross_valid = res["cross_valid"]
+    test = res["cross_valid"]
     population = initial_population
 
     for t in range(t_max):
@@ -193,7 +193,7 @@ for c in range(10):
                      prefix=f'cross validationing... {c+1}', length=25)
     sse_cross = []
     for i, p in enumerate(population):
-        SSE = p.evaluate(cross_valid)
+        SSE = p.evaluate(test)
         sse_cross.append(SSE)
         printProgressBar(i+1, len(population),
                          prefix=f'cross validationing... {c+1}', length=25)
