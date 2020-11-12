@@ -22,11 +22,12 @@
 
 #     # print(mydict)
 import numpy as np
-c = 0
-for i in range(100000):
-    x = np.random.randint(0, 1)
-    if x == 1:
-        c += 1
 
+x = []
 
-print(c)
+for i in range(4):
+    r = np.random.randint(0, 5)
+    while x.__contains__(r):
+        r = np.random.randint(0, 5)
+    x.append(r)
+    print(r)
